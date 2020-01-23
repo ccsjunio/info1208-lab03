@@ -6,7 +6,7 @@
 <html lang="en-US">
     <?php require('./templates/head.php');?>
     <body>
-    <form class="needs-validation" action="/carlos_ferraz_output" method="post" novalidate>
+    <form class="needs-validation" action="http://<?php echo $_SERVER['SERVER_NAME'];?>/carlos_ferraz_output" method="post" novalidate>
         <div class="form-row">
             <div class="col-md-4 mb-3">
             <label for="firstName">First name</label>
