@@ -13,9 +13,9 @@ switch ($request) {
         http_response_code(200);
         require __DIR__ . '/views/index.php';
         break;
-    case '/about' :
+    case '/carlos_ferraz_output' :
         http_response_code(200);
-        require __DIR__ . '/views/about.php';
+        require __DIR__ . '/views/carlos_ferraz_output.php';
         break;
     default:
         http_response_code(404);
