@@ -1,6 +1,7 @@
 <?php
 
 define("_ROOTFOLDER",$_SERVER['DOCUMENT_ROOT']);
+define("_URLBASE",$_SERVER['SERVER_NAME']);
 
 $request = $_SERVER['REQUEST_URI'];
 
