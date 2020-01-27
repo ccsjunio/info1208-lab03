@@ -8,13 +8,13 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <!-- position of the brand attached to the nav bar -->
-    <a class="navbar-brand" href="#"><img src="http://<?php echo _URLBASE; ?>/img/LogoCF.png" width="60" alt="CF"></a>
+    <a class="navbar-brand" href="/"><img src="http://<?php echo _URLBASE; ?>/img/LogoCF.png" width="60" alt="CF"></a>
 
     <!-- navbar that will colapse when the media width become narrow -->
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://fanshawec.ca" target="_blank">Fanshawe College</a>

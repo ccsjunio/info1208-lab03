@@ -65,3 +65,29 @@ some useful references:
 
 * https://www.linode.com/docs/web-servers/apache/how-to-set-up-htaccess-on-apache/
 * https://hostadvice.com/how-to/how-to-enable-apache-mod_rewrite-on-an-ubuntu-18-04-vps-or-dedicated-server/
+
+## structure of the web app
+
+### fonts
+Contains the ttf fonts used to produce the image from the text. This is done by the class TextToImage. The GD library must be enabled for this feature to work.
+
+### img
+Contains the images used through the site
+
+### js
+Contains the customization scripts to the page and not the bootstrap or other third-parts
+
+### styles
+Contains the customization styles to the site and not the bootstrap ones or other third-parts
+
+### templates
+Contains the reusable code of the head for all pages, the foot with the javascript code calls and the nav bar code.
+
+### utils
+Contains the implemmentation of the feature to convert text to image dynamically through GD library methods. Works only with GD loaded. If it isn't loaded, other features will appear.
+
+### vendor
+Contains all third-part libraries, including bootstrap and jquery
+
+### views
+Contains all the pages at the site, they are loaded and rendered after the request is processed by the router.
