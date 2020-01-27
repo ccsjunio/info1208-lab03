@@ -91,3 +91,6 @@ Contains all third-part libraries, including bootstrap and jquery
 
 ### views
 Contains all the pages at the site, they are loaded and rendered after the request is processed by the router.
+
+## ISSUE
+There is an issue with the saving of the images created are not possible yet if the folder img does not have privileges of writing to public. This will be solved in a next release.
