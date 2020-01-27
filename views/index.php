@@ -1,9 +1,12 @@
 <?php
-define("_TITLE", "INDEX");
+// defines the title of the page
+define("TITLE", "INDEX");
 ?>
 
 <!doctype html>
 <html lang="en-US">
+<!-- loads the script with the code for the head -->
+<!-- separated to be reused through the pages -->
 <?php require('./templates/head.php'); ?>
 
 <body>
@@ -12,7 +15,7 @@ define("_TITLE", "INDEX");
         <?php require_once('./templates/mainNav.php'); ?>
         <form class="needs-validation" action="http://<?php echo _URLBASE; ?>/carlos_ferraz_output" method="post" novalidate>
             <div class="form-row">
-
+                <!-- jumbotron to introduce the page -->
                 <div class="jumbotron">
                     <h1 class="display-4">Try the awesome age calculator!</h1>
                     <p class="lead">You will be amazed to this awesome and exclusive feature to free you from the burden of the complex calculation of your age.</p>
@@ -90,6 +93,7 @@ define("_TITLE", "INDEX");
         </form>
     </div><!-- end of container -->
 
+    <!-- loads the foot of the page, with calls to javascript code -->
     <?php require_once('./templates/foot.php'); ?>
 </body>
 

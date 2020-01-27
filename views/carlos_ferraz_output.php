@@ -1,19 +1,33 @@
 <?php
+// define a constant with the title 
 define("TITLE", "OUTPUT");
+// set a boolean variable to indicate the state of GD library,
+// if loaded or not
 $GDLOADED = false;
 
+// check whether GD library is  loaded or not
+// and update the GDLOADED state
 if (extension_loaded('gd')) {
     $GDLOADED = false;
 }
 
+// dump the parameters sent through the form in the
+// caller page
 var_dump($_POST);
 
+// attribute the parameters to its specific variables
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $birthDay = $_POST['birthDay'];
 
+// create a variable $today, to contain todays date
+// to be used in the calculation of the user's age
 $today = new Datetime(date('m.d.y'));
 
+// create arrays from the first and last name
+// allowing to use only the first name it they
+// have multuple names
+// eg: CARLOS CESAR turns to an array ['CARLOS', 'CESAR']
 $firstNames = explode(" ", $firstName);
 $lastNames = explode(" ", $lastName);
 
@@ -21,6 +35,8 @@ $lastNames = explode(" ", $lastName);
 $birthDate = new DateTime($birthDay);
 $age = $today->diff($birthDate);
 
+// set the string to be displayed including the age and
+// the suffix "years" or "year"
 $ageString = $age->y > 1 ? $age->y . " years" : $age->y . " year";
 
 // verify if gd libray (graphics library for PHP) is loaded
@@ -28,7 +44,10 @@ $ageString = $age->y > 1 ? $age->y . " years" : $age->y . " year";
 // the first name, last name and age as images
 // with captions beneath
 if ($GDLOADED) {
-    //echo "gd is loaded";
+    // load the class to produce an image from text
+    // sources refered on the file
+    // code allowed to use for personal and non commercial purpose
+    // termos here: https://www.codexworld.com/terms-conditions/
     require_once './utils/TextToImage.php';
 
     //create the images from the text
@@ -54,6 +73,7 @@ if ($GDLOADED) {
 <body>
     <?php require_once('./templates/mainNav.php'); ?>
     <div class="jumbotron jumbotron-fluid jumbotron-special">
+        <!-- jumbotron used to introduce the page of results from the form -->
         <div class="container">
             <h1 class="display-4">Done!</h1>
             <p class="lead">You can see now how fantastic is to automatically calculate the complex algorith to obtain your age.</p>
@@ -70,7 +90,9 @@ if ($GDLOADED) {
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
             </ol>
+
             <div class="carousel-inner">
+                <!-- carrousel item with the first name -->
                 <div class="carousel-item active" data-interval="">
                     <img src="./img/firstName.png" class="d-block w-100" alt="<?php echo $firstNames[0]; ?>">
                     <div class="carousel-caption d-none d-md-block">
@@ -78,6 +100,7 @@ if ($GDLOADED) {
                         <p><?php echo $firstNames[0]; ?></p>
                     </div>
                 </div>
+                <!-- carrousel item with the last name -->
                 <div class="carousel-item" data-interval="">
                     <img src="./img/lastName.png" class="d-block w-100" alt="<?php echo $lastNames[0]; ?>">
                     <div class="carousel-caption d-none d-md-block">
@@ -85,6 +108,7 @@ if ($GDLOADED) {
                         <p><?php echo $lastNames[0]; ?></p>
                     </div>
                 </div>
+                <!-- carrousel item with the age string -->
                 <div class="carousel-item" data-interval="">
                     <img src="./img/ageString.png" class="d-block w-100" alt="<?php echo $ageString; ?>">
                     <div class="carousel-caption d-none d-md-block">
@@ -107,6 +131,7 @@ if ($GDLOADED) {
     ?>
         <!-- beginning of render in the case there is no gd library installed -->
         <div class="accordion" id="accordionExample">
+            <!-- first item of the accordion -->
             <div class="card">
                 <div class="card-header" id="headingOne">
                     <h2 class="mb-0">
@@ -122,6 +147,7 @@ if ($GDLOADED) {
                     </div>
                 </div>
             </div>
+            <!-- second item of the accordion -->
             <div class="card">
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
@@ -136,6 +162,7 @@ if ($GDLOADED) {
                     </div>
                 </div>
             </div>
+            <!-- third item of the accordion -->
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
@@ -153,6 +180,10 @@ if ($GDLOADED) {
         </div>
     <?php
     }
+    // loads the html code for the foot area, with calls to js code
+    // from bootstrap and specific for the web page
+    // used to facilitate maintenance of code that
+    // appears as the same in multiple pages
     ?> <?php require_once('./templates/foot.php'); ?>
 </body>
 
