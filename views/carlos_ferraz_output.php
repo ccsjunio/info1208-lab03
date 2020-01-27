@@ -8,7 +8,7 @@ $GDLOADED = false;
 // check whether GD library is  loaded or not
 // and update the GDLOADED state
 if (extension_loaded('gd')) {
-    $GDLOADED = false;
+    $GDLOADED = true;
 }
 
 // dump the parameters sent through the form in the
