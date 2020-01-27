@@ -101,7 +101,7 @@ if (!in_array("", $_POST)) {
             } else {
             ?>
                 <h1 class=" display-4">Done!</h1>
-                <p class="lead">You can see now how fantastic is to automatically calculate the complex algorith to obtain your age.</p>
+                <p class="lead">You can see now how fantastic is to automatically calculate the complex algorithm to obtain your age.</p>
 
                 <!-- this section will be rendered if the graphics library gd is loaded in the php installation -->
                 <?php
