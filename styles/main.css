@@ -2,3 +2,18 @@ body{
     width:970px;
     margin: 0 auto;
 }
+
+.jumbotron-special{
+    background-color:black;
+    color:white;
+}
+
+.carousel-item{
+    background-color: black;
+    color: white;
+}
+
+.carousel-item img{
+    height: 400px;
+    margin-bottom: 75px;
+}
