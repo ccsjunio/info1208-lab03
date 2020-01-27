@@ -8,7 +8,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <!-- position of the brand attached to the nav bar -->
-    <a class="navbar-brand" href="#"><img src="/img/logoCF.png" width="60" alt="CF"></a>
+    <a class="navbar-brand" href="#"><img src="http://<?php echo _URLBASE; ?>/img/logoCF.png" width="60" alt="CF"></a>
 
     <!-- navbar that will colapse when the media width become narrow -->
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
